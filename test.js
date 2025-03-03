@@ -1,6 +1,6 @@
 const net = require('net');
 
-const PORT = process.env.PORT || 8000; // Render assigns a dynamic port
+const PORT = process.env.PORT || 8000;
 const HOST = '0.0.0.0'; // Listen on all available IPs
 
 const server = net.createServer((socket) => {
