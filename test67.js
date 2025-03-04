@@ -2,10 +2,10 @@ const net = require("net");
 const mongoose = require("mongoose");
 
 // ✅ Connect to MongoDB (Optional)
-mongoose.connect("mongodb://localhost:27017/gpsDB", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+// mongoose.connect("mongodb://localhost:27017/gpsDB", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// });
 
 // ✅ GPS Data Schema
 const gpsSchema = new mongoose.Schema({
