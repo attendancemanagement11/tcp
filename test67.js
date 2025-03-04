@@ -26,6 +26,7 @@ const HOST = "0.0.0.0"; // Listen on all interfaces
 const lastReceived = new Map();
 
 const server = net.createServer((socket) => {
+    console.log('hahahah',socket)
     console.log(`📡 GPS device connected: ${socket.remoteAddress}:${socket.remotePort}`);
 
     socket.on("data", async (data) => {
