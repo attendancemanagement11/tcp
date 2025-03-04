@@ -29,12 +29,13 @@ const server = net.createServer((socket) => {
         const rawData = data.toString("hex").toUpperCase();
         console.log(`📥 Received Raw Data: ${rawData}`);
 
-        if (rawData.startsWith("7878")) {
+        if (rawData.startsWith("7879")) {
             const protocolNumber = rawData.substring(6, 8);
             
             // ✅ 1️⃣ Handle Login Packet
             if (protocolNumber === "01") {
-                const imei = rawData.substring(10, 24);
+                const imeiHex = rawData.substring(8, 24); // Extracts 8 bytes (16 hex characters)
+                const imei = BigInt("0x" + imeiHex).toString(); // Convert hex to decimal
                 console.log(`🔑 IMEI Login: ${imei}`);
 
                 // Send Login Response
